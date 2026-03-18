@@ -410,42 +410,7 @@
     });
   }
 
-  showCookieBannerIfNeeded();
   createHomeButton();
-
-  if (cookieAcceptAllBtn) {
-    cookieAcceptAllBtn.addEventListener('click', function () {
-      setCookieConsent('accepted');
-      hideCookieBanner();
-    });
-  }
-
-  if (cookieRejectBtn) {
-    cookieRejectBtn.addEventListener('click', function () {
-      setCookieConsent('rejected');
-      hideCookieBanner();
-    });
-  }
-
-  if (cookiePreferencesBtn) {
-    cookiePreferencesBtn.addEventListener('click', function () {
-      try {
-        window.location.href = getLocalizedCookiesHref();
-      } catch (e) {
-        // fallback silencioso
-      }
-    });
-  }
-
-  if (cookieManageLink && cookieBanner) {
-    cookieManageLink.addEventListener('click', function () {
-      try {
-        cookieBanner.hidden = false;
-      } catch (e) {
-        // fallback silencioso
-      }
-    });
-  }
 
   if (selectBtn && fileInput && dropZone) {
     selectBtn.addEventListener('click', function (e) {

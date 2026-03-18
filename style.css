@@ -57,6 +57,68 @@ body {
 }
 
 /* ===== Header ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #0f172a;
+  color: #e5e7eb;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.topbar-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.topbar-logo svg {
+  width: 26px;
+  height: 26px;
+  color: #28a745;
+}
+
+.topbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.topbar-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.topbar-nav a:hover {
+  background: rgba(226, 232, 240, 0.1);
+  color: #ffffff;
+}
+
+.topbar-nav a[aria-current="page"] {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
 .header {
   padding: 2.5rem 0 1.75rem;
   background: var(--color-surface);
@@ -555,32 +617,146 @@ body {
 .cookie-btn {
   font-size: 0.85rem;
   padding: 0.45rem 0.9rem;
-  background: #22c55e;
-  color: #020617;
+  background: #28a745;
+  color: #000000;
   border-radius: 999px;
   border: none;
 }
 
 .cookie-btn:hover {
-  background: #16a34a;
+  background: #218838;
 }
 
 .cookie-btn-primary {
-  background: #22c55e;
+  background: #28a745;
 }
 
 .cookie-btn-primary:hover {
-  background: #16a34a;
+  background: #218838;
 }
 
 .cookie-btn-ghost {
-  background: #22c55e;
-  color: #020617;
+  background: #28a745;
+  color: #000000;
   border: none;
 }
 
 .cookie-btn-ghost:hover {
-  background: #16a34a;
+  background: #218838;
+}
+
+/* ===== Cookie modal (preferences) ===== */
+.cb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.65);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cb-modal {
+  width: 100%;
+  max-width: 520px;
+  background: #0f172a;
+  color: #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.cb-modal-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.15);
+}
+
+.cb-modal-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.cb-modal-close {
+  flex: 0 0 auto;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(226, 232, 240, 0.08);
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cb-modal-close:hover {
+  background: rgba(226, 232, 240, 0.15);
+}
+
+.cb-modal-body {
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cb-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: rgba(248, 250, 252, 0.02);
+  cursor: pointer;
+  user-select: none;
+}
+
+.cb-toggle-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #28a745;
+}
+
+.cb-toggle-row--disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.cb-toggle-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.cb-modal-footer {
+  padding: 1rem 1.25rem 1.25rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.15);
+  display: flex;
+  justify-content: center;
+}
+
+.cb-save-btn {
+  background: #28a745;
+  color: #000000;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.cb-save-btn:hover {
+  background: #218838;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 480px) {
@@ -599,6 +775,15 @@ body {
 
 /* ===== Responsivo ===== */
 @media (max-width: 480px) {
+  .topbar-inner {
+    padding: 0.6rem 0;
+  }
+
+  .topbar-nav a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.55rem;
+  }
+
   .header {
     padding: 1.25rem 0 1rem;
   }
