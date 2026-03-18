@@ -410,8 +410,6 @@
     });
   }
 
-  createHomeButton();
-
   if (selectBtn && fileInput && dropZone) {
     selectBtn.addEventListener('click', function (e) {
       e.preventDefault();
