@@ -95,7 +95,8 @@ body {
   width: 26px;
   height: 26px;
   color: #28a745;
-  display: none;
+  display: none !important;
+  visibility: hidden;
 }
 
 .topbar-nav {
