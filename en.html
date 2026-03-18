@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert WebP and HEIC images to JPG free in your browser. 100% private, with no server upload. Fast and secure.">
+  <title>Free WebP and HEIC to JPG and PNG Converter | Online and Private</title>
+  <link rel="alternate" hreflang="pt-BR" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="alternate" hreflang="es" href="es.html">
+  <link rel="alternate" hreflang="x-default" href="en.html">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="lang-switcher" aria-label="Language switcher">
+        <a href="index.html" class="lang-link" lang="pt-BR">PT</a>
+        <a href="en.html" class="lang-link" lang="en" aria-current="page">EN</a>
+        <a href="es.html" class="lang-link" lang="es">ES</a>
+      </nav>
+      <h1 class="title">Free WebP and HEIC to JPG and PNG Converter</h1>
+      <p class="subtitle">Convert your images in the browser - fast, free, and 100% private</p>
+
+      <!-- Placeholder AdSense: Leaderboard (728x90) -->
+      <div class="ad-placeholder ad-leaderboard" aria-hidden="true">
+        AdSense Ad Space (Leaderboard 728×90)
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="converter" aria-labelledby="converter-heading">
+        <h2 id="converter-heading" class="sr-only">Image conversion area</h2>
+
+        <div class="format-selector">
+          <span class="format-label">Output format:</span>
+          <div class="format-options" role="group" aria-label="Output format">
+            <label class="format-option">
+              <input type="radio" name="outputFormat" value="jpg" checked>
+              <span class="format-option-label">JPG</span>
+            </label>
+            <label class="format-option">
+              <input type="radio" name="outputFormat" value="png">
+              <span class="format-option-label">PNG</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Drag images here or click to select">
+          <div class="drop-zone-content">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <p class="drop-text">Drag WebP or HEIC images here</p>
+            <p class="drop-sub">or</p>
+            <button type="button" class="btn btn-primary" id="selectBtn">Select file</button>
+            <input type="file" id="fileInput" class="file-input" accept=".webp,.heic,.heif,image/webp,image/heic,image/heif" multiple hidden>
+          </div>
+        </div>
+
+        <div class="progress-section" id="progressSection" aria-live="polite" aria-atomic="true" hidden>
+          <p class="progress-label" id="progressLabel">Processing image... 0%</p>
+          <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div class="result" id="result" hidden>
+          <p class="result-info" id="resultInfo"></p>
+          <button type="button" class="btn btn-download" id="downloadBtn">Download JPG</button>
+        </div>
+      </section>
+
+      <!-- Placeholder AdSense: Medium Rectangle (300x250) -->
+      <div class="ad-placeholder ad-rectangle" aria-hidden="true">
+        AdSense Ad Space (Medium Rectangle 300×250)
+      </div>
+
+      <section class="how-it-works" aria-labelledby="how-heading">
+        <h2 id="how-heading">How it works</h2>
+        <p>
+          <strong>Your images are never sent to any server.</strong> Every conversion happens directly in your browser, with 100% client-side processing. That means WebP and HEIC files stay only on your device, making the process <strong>fully secure, private, and offline</strong>. No data is stored or transmitted to third parties, so you can convert with confidence at no cost.
+        </p>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading">Frequently asked questions</h2>
+
+        <article class="faq-item">
+          <h3 class="faq-question">What is WebP and why do I need to convert it to JPG?</h3>
+          <p class="faq-answer">
+            WebP is an image format created by Google that offers strong compression. Many websites and devices still prefer or require JPG for compatibility with printers, editors, and social networks. Converting to JPG helps ensure your image works everywhere.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3 class="faq-question">What is HEIC and why does it appear on my iPhone?</h3>
+          <p class="faq-answer">
+            HEIC (High Efficiency Image Container) is the default photo format used by iPhones and iPads starting with iOS 11. It takes up less space than JPG, but not every app or website supports HEIC. Converting to JPG lets you use your photos on any device or service.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3 class="faq-question">Is the conversion really secure? Are my files uploaded to the internet?</h3>
+          <p class="faq-answer">
+            Yes, it is secure. In this tool, all processing happens in your own browser. Your images never leave your computer or phone, so there is no upload to a server and no cloud storage. The JPG file is also created locally, and only you decide whether to download it.
+          </p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <nav class="footer-nav" aria-label="Institutional links">
+        <a href="sobre-en.html">About Us</a>
+        <a href="privacidade-en.html">Privacy Policy</a>
+        <a href="cookies-en.html">Cookie Policy</a>
+        <a href="faq-en.html">Frequently Asked Questions</a>
+        <a href="dmca-en.html">DMCA</a>
+        <a href="termos-en.html">Terms of Use</a>
+        <a href="lgpd-en.html">Brazilian Data Protection Law (LGPD)</a>
+      </nav>
+      <p class="footer-copy">© 2026 All rights reserved.</p>
+      <button type="button" class="cookie-footer-link" id="cookieManageLink">Manage cookie preferences</button>
+    </div>
+  </footer>
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie notice" hidden>
+    <div class="cookie-banner-inner">
+      <p class="cookie-text">
+        We use essential and third-party cookies, including Google, to personalize ads, analyze traffic, and improve your experience. You can accept all cookies, reject non-essential ones, or manage your preferences.
+      </p>
+      <div class="cookie-actions">
+        <button type="button" class="btn cookie-btn cookie-btn-primary" id="cookieAcceptAll">Accept All</button>
+        <button type="button" class="btn cookie-btn" id="cookieReject">Reject Non-Essential</button>
+        <button type="button" class="btn cookie-btn cookie-btn-ghost" id="cookiePreferences">Preferences</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
