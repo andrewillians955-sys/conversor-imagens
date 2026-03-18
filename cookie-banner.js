@@ -260,13 +260,22 @@
     }
 
     function openPreferences() {
-      // Reuse current stored state if any.
+      // Ensure only one modal exists at a time.
+      try {
+        var existing = document.querySelector('.cb-overlay');
+        if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+      } catch (e) {
+        // ignore
+      }
+
       var latest = readStoredConsent();
       var modal = createModal(copy, latest);
       document.body.appendChild(modal.overlay);
+
       try {
+        modal.overlay.style.display = 'flex';
         document.body.style.overflow = 'hidden';
-      } catch (e) {
+      } catch (e2) {
         // ignore
       }
     }
@@ -280,7 +289,14 @@
     }
 
     if (preferencesBtn) {
-      preferencesBtn.addEventListener('click', function () { openPreferences(); });
+      preferencesBtn.addEventListener('click', function (e) {
+        try {
+          e.preventDefault();
+        } catch (err) {
+          // ignore
+        }
+        openPreferences();
+      });
     }
 
     if (manageLink) {

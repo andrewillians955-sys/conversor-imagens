@@ -18,6 +18,7 @@
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
   --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --topbar-h: 64px;
 }
 
 html {
@@ -34,6 +35,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: var(--topbar-h);
 }
 
 /* ===== Utilitários ===== */
@@ -58,11 +60,14 @@ body {
 
 /* ===== Header ===== */
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 60;
-  background: #0f172a;
-  color: #e5e7eb;
+  height: var(--topbar-h);
+  background: #212529;
+  color: #ffffff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
@@ -72,7 +77,7 @@ body {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem 1.25rem;
-  max-width: 720px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -94,8 +99,9 @@ body {
 
 .topbar-nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
+  align-items: center;
   gap: 0.5rem;
 }
 
@@ -119,6 +125,16 @@ body {
   color: #ffffff;
 }
 
+.topbar-start {
+  background: #111827;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.topbar-start:hover {
+  background: #0b1220;
+}
+
 .header {
   padding: 2.5rem 0 1.75rem;
   background: var(--color-surface);
@@ -127,7 +143,7 @@ body {
 
 .header .container {
   position: relative;
-  padding-top: 2rem;
+  padding-top: 0;
 }
 
 .title {
@@ -146,6 +162,7 @@ body {
 
 /* ===== Language switcher ===== */
 .lang-switcher {
+  display: none !important;
   position: absolute;
   top: 0.25rem;
   right: 1.25rem;
@@ -190,7 +207,7 @@ body {
 .home-button {
   position: fixed;
   right: 1rem;
-  top: 5.5rem;
+  top: calc(var(--topbar-h) + 0.75rem);
   z-index: 35;
   display: inline-flex;
   align-items: center;
@@ -264,11 +281,12 @@ body {
 /* ===== Seletor de formato ===== */
 .format-selector {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -276,6 +294,35 @@ body {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-text);
+}
+
+.format-select-wrap {
+  min-width: 180px;
+  flex: 0 0 auto;
+}
+
+.format-select {
+  width: 100%;
+  appearance: none;
+  padding: 0.65rem 2rem 0.65rem 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  border-radius: 10px;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.format-select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Quando usamos dropdown, os radios ficam apenas como fonte de verdade */
+.format-native-radios {
+  display: none;
 }
 
 .format-options {
@@ -775,8 +822,17 @@ body {
 
 /* ===== Responsivo ===== */
 @media (max-width: 480px) {
+  :root {
+    --topbar-h: 88px;
+  }
+
   .topbar-inner {
     padding: 0.6rem 0;
+  }
+
+  .topbar-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .topbar-nav a {
@@ -797,7 +853,6 @@ body {
 
   .home-button {
     right: 0.75rem;
-    top: 4.5rem;
     padding: 0.65rem 0.95rem;
     font-size: 0.85rem;
   }

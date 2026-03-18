@@ -28,17 +28,13 @@
         <a href="index.html" aria-current="page">Português</a>
         <a href="en.html">English</a>
         <a href="es.html">Español</a>
+        <a class="topbar-start" href="index.html" role="button">Começar</a>
       </nav>
     </div>
   </header>
 
   <header class="header">
     <div class="container">
-      <nav class="lang-switcher" aria-label="Language switcher">
-        <a href="index.html" class="lang-link" lang="pt-BR" aria-current="page">PT</a>
-        <a href="en.html" class="lang-link" lang="en">EN</a>
-        <a href="es.html" class="lang-link" lang="es">ES</a>
-      </nav>
       <h1 class="title">Conversor de WebP e HEIC para JPG e PNG Grátis</h1>
       <p class="subtitle">Converta suas imagens no navegador — rápido, grátis e 100% privado</p>
 
@@ -55,16 +51,24 @@
         <h2 id="converter-heading" class="sr-only">Área de conversão de imagens</h2>
 
         <div class="format-selector">
-          <span class="format-label">Formato de saída:</span>
-          <div class="format-options" role="group" aria-label="Formato de saída">
-            <label class="format-option">
-              <input type="radio" name="outputFormat" value="jpg" checked>
-              <span class="format-option-label">JPG</span>
-            </label>
-            <label class="format-option">
-              <input type="radio" name="outputFormat" value="png">
-              <span class="format-option-label">PNG</span>
-            </label>
+          <label class="format-label" for="outputFormatSelect">Formato de saída:</label>
+          <div class="format-select-wrap">
+            <select id="outputFormatSelect" class="format-select" aria-label="Formato de saída">
+              <option value="jpg" selected>JPG</option>
+              <option value="png">PNG</option>
+            </select>
+          </div>
+          <div class="format-native-radios" hidden>
+            <div class="format-options" role="group" aria-label="Formato de saída">
+              <label class="format-option">
+                <input type="radio" name="outputFormat" value="jpg" checked>
+                <span class="format-option-label">JPG</span>
+              </label>
+              <label class="format-option">
+                <input type="radio" name="outputFormat" value="png">
+                <span class="format-option-label">PNG</span>
+              </label>
+            </div>
           </div>
         </div>
 
@@ -163,5 +167,6 @@
   </div>
   <script src="script.js"></script>
   <script src="cookie-banner.js"></script>
+  <script src="output-format-ui.js"></script>
 </body>
 </html>
