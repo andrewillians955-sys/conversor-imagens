@@ -206,6 +206,11 @@
       } catch (e) {
         // ignore
       }
+      try {
+        document.body.classList.remove('cb-open');
+      } catch (e2) {
+        // ignore
+      }
       if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
     }
 
@@ -275,6 +280,7 @@
       try {
         modal.overlay.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('cb-open');
       } catch (e2) {
         // ignore
       }

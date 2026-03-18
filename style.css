@@ -808,6 +808,12 @@ body {
   transform: translateY(-1px);
 }
 
+/* Hide elements behind the cookie preferences modal */
+.cb-open .topbar,
+.cb-open .home-button {
+  display: none !important;
+}
+
 @media (max-width: 480px) {
   .footer-nav {
     display: grid;
