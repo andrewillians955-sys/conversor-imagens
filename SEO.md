@@ -7,11 +7,9 @@ Os arquivos HTML usam URLs **absolutas** para:
 - `<link rel="canonical">`
 - `<link rel="alternate" hreflang="...">`
 
-A origem padrão é o GitHub Pages deste repositório:
+**Domínio canônico atual:** `https://conversor.convertflash.com`
 
-`https://andrewillians955-sys.github.io/conversor-imagens`
-
-Se você usar **domínio próprio** ou outra URL canônica:
+Para alterar no futuro:
 
 1. Edite `SITE_ORIGIN` em `scripts/apply-seo-meta.py` e rode:  
    `python scripts/apply-seo-meta.py`
@@ -27,10 +25,10 @@ Se você usar **domínio próprio** ou outra URL canônica:
 
 Não configure, no mesmo host, uma regra que mande `/` → `/index.html` **e** outra `/index.html` → `/` — isso gera **loop**.
 
-**GitHub Pages** (hospedagem estática) não aplica `.htaccess` nem `_redirects`. A consolidação principal é o **canonical** na home apontando para `.../` (sem `index.html`).
+**GitHub Pages** (hospedagem estática) não aplica `.htaccess` nem `_redirects`. A consolidação principal é o **canonical** na home apontando para `https://conversor.convertflash.com/` (sem `index.html`).
 
 ## Google Search Console
 
-- Use propriedade com prefixo de URL em **HTTPS**.
-- Envie o `sitemap.xml` após publicar.
+- Cadastre a propriedade com prefixo de URL: `https://conversor.convertflash.com/`
+- Envie o sitemap: `https://conversor.convertflash.com/sitemap.xml`
 - O `x-default` das páginas principais aponta para a versão em inglês (`en.html`), alinhado ao conjunto hreflang existente.

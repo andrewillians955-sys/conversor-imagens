@@ -3,7 +3,7 @@
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-SITE_ORIGIN = "https://andrewillians955-sys.github.io/conversor-imagens"
+SITE_ORIGIN = "https://conversor.convertflash.com"
 
 PATHS = [
     "/",

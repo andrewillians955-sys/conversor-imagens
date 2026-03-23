@@ -3,7 +3,7 @@
 import re
 from pathlib import Path
 
-SITE_ORIGIN = "https://andrewillians955-sys.github.io/conversor-imagens"
+SITE_ORIGIN = "https://conversor.convertflash.com"
 
 FILES = [
     ("index.html", "/"),

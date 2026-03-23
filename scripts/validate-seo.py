@@ -1,7 +1,7 @@
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
-base = "https://andrewillians955-sys.github.io/conversor-imagens"
+base = "https://conversor.convertflash.com"
 for p in sorted(root.glob("*.html")):
     t = p.read_text(encoding="utf-8")
     assert 'rel="canonical"' in t, p.name
