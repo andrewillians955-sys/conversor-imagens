@@ -1,0 +1,2 @@
+# Netlify: uma única regra — consolida /index.html na raiz (evita duplicata e cadeias).
+/index.html  /  301

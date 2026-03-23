@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andrewillians955-sys.github.io/conversor-imagens/sitemap.xml
