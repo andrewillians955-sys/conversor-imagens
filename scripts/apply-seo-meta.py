@@ -120,12 +120,13 @@ def build_hreflang_block(cluster: str) -> str:
 
 def main():
     root = Path(__file__).resolve().parent.parent
+    # Usar \n explícitos: \s* engolia quebras e a indentação da linha seguinte (ex.: stylesheet).
     pattern = re.compile(
-        r"(  <link rel=\"canonical\" href=\"[^\"]+\">\s*)?"
-        r"  <link rel=\"alternate\" hreflang=\"pt-BR\" href=\"[^\"]+\">\s*"
-        r"  <link rel=\"alternate\" hreflang=\"en\" href=\"[^\"]+\">\s*"
-        r"  <link rel=\"alternate\" hreflang=\"es\" href=\"[^\"]+\">\s*"
-        r"  <link rel=\"alternate\" hreflang=\"x-default\" href=\"[^\"]+\">\s*",
+        r"(?:  <link rel=\"canonical\" href=\"[^\"]+\">\n)?"
+        r"  <link rel=\"alternate\" hreflang=\"pt-BR\" href=\"[^\"]+\">\n"
+        r"  <link rel=\"alternate\" hreflang=\"en\" href=\"[^\"]+\">\n"
+        r"  <link rel=\"alternate\" hreflang=\"es\" href=\"[^\"]+\">\n"
+        r"  <link rel=\"alternate\" hreflang=\"x-default\" href=\"[^\"]+\">\n",
         re.MULTILINE,
     )
     for filename, canon in FILES:
