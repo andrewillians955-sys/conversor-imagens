@@ -1,75 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://conversor.convertflash.com/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://conversor.convertflash.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://conversor.convertflash.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://conversor.convertflash.com/en.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://conversor.convertflash.com/en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/sobre.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/sobre-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/sobre-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/privacidade.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/privacidade-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/privacidade-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/cookies.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/cookies-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/cookies-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/faq.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/faq-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/faq-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/dmca.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/dmca-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/dmca-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/termos.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/termos-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/termos-es.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/lgpd.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/lgpd-en.html</loc>
-  </url>
-  <url>
-    <loc>https://conversor.convertflash.com/lgpd-es.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://conversor.convertflash.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://conversor.convertflash.com/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://conversor.convertflash.com/en.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
